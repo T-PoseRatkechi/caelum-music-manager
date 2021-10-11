@@ -1,0 +1,37 @@
+@import '../../scss/ColorThemes.scss';
+@import '../../scss/TextDecorations.scss';
+
+// Cards.
+.card {
+  @include theme() {
+    background-color: lighten(theme-get('surface-color'), 1%);
+    color: theme-get('on-surface-color');
+  }
+
+  .card-image {
+    user-select: none;
+  }
+
+  .card-title {
+    background-color: rgba(0, 0, 0, 0.3);
+    text-shadow: $text-shadow;
+    user-select: none;
+  }
+}
+
+.card
+  .card-action
+  a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  @include theme() {
+    color: theme-get('main-color');
+  }
+}
+
+.game-select {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: inherit;
+  overflow-y: scroll;
+  z-index: 95;
+}

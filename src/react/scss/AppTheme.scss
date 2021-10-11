@@ -1,0 +1,163 @@
+@import './ColorThemes.scss';
+@import './ClickableIcons.scss';
+
+#root > div {
+  height: inherit;
+  width: inherit;
+}
+
+#content-root {
+  overflow: auto;
+  min-height: 100%;
+  min-width: 100%;
+  @include theme() {
+    background-color: theme-get('bg-color');
+    color: theme-get('on-bg-color');
+  }
+}
+
+.container {
+  height: 95%;
+  max-height: 95%;
+  width: 95%;
+  max-width: 95%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  overflow: auto;
+}
+
+nav {
+  @include theme() {
+    background-color: lighten(theme-get('surface-color'), 5);
+    color: theme-get('on-surface-color');
+  }
+
+  a.btn-floating {
+    @include theme() {
+      background-color: theme-get('main-color');
+    }
+
+    i {
+      @include theme() {
+        color: theme-get('on-main-color');
+      }
+    }
+  }
+}
+
+.layer-0 {
+  @include theme() {
+    background-color: lighten(theme-get('surface-color'), 5%);
+    color: theme-get('on-surface-color');
+  }
+}
+
+.layer-1 {
+  @include theme() {
+    background-color: lighten(theme-get('surface-color'), 7%);
+    color: theme-get('on-surface-color');
+  }
+}
+
+.layer-2 {
+  @include theme() {
+    background-color: lighten(theme-get('surface-color'), 8%);
+    color: theme-get('on-surface-color');
+  }
+}
+
+.second-color {
+  @include theme() {
+    background-color: theme-get('second-color');
+    color: theme-get('on-second-color');
+  }
+}
+
+.progress {
+  @include theme() {
+    background-color: theme-get('main-color');
+  }
+
+  .indeterminate {
+    @include theme() {
+      background-color: theme-get('second-color');
+    }
+  }
+}
+
+a {
+  @include theme() {
+    color: theme-get('main-color');
+  }
+}
+
+[type='checkbox'].filled-in:checked + span:not(.lever):after {
+  @include theme() {
+    background-color: theme-get('main-color');
+    border: 2px solid darken(theme-get('main-color'), 10%);
+  }
+}
+
+[type='checkbox'].filled-in:checked + span:not(.lever):before {
+  @include theme() {
+    border-right: 2px solid theme-get('on-main-color');
+    border-bottom: 2px solid theme-get('on-main-color');
+  }
+}
+
+.input-field.inline input,
+.input-field.inline .select-dropdown {
+  @include theme() {
+    background-color: theme-get('surface-color');
+    color: theme-get('on-surface-color');
+  }
+}
+
+.filepath-over {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  span {
+    @include theme() {
+      color: theme-get('main-color-2');
+    }
+  }
+}
+
+// Dropdown button.
+.btn,
+.btn-large,
+.btn-small {
+  @include theme() {
+    background-color: theme-get('second-color');
+    color: theme-get('on-second-color');
+  }
+
+  i {
+    float: right;
+  }
+}
+
+.btn:hover,
+.btn-large:hover,
+.btn-small:hover {
+  @include theme() {
+    background-color: darken(theme-get('second-color'), 5%);
+  }
+}
+
+.dropdown-content li > a,
+.dropdown-content li > span {
+  @include theme() {
+    background-color: theme-get('second-color');
+    color: theme-get('on-second-color');
+  }
+}
+
+.dropdown-content li > a:hover,
+.dropdown-content li > span.active {
+  @include theme() {
+    background-color: darken(theme-get('second-color'), 5%);
+  }
+}

@@ -1,0 +1,9 @@
+// Hoverable icons with transparency.
+.clickable-icon {
+  opacity: 0.85;
+  user-select: none;
+}
+
+.clickable-icon:hover {
+  opacity: 1;
+}

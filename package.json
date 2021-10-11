@@ -1,0 +1,82 @@
+{
+  "name": "p4gmusicmanager",
+  "version": "1.0.0",
+  "private": true,
+  "productName": "Caelum Music Manager",
+  "main": "electron/main.js",
+  "homepage": "./",
+  "build": {
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "electron-cra-example",
+      "owner": "T-Pose Ratkechi"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "build/electron/icon.ico"
+    }
+  },
+  "dependencies": {
+    "7zip-bin": "^5.1.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "electron-dl": "^3.2.1",
+    "install": "^0.13.0",
+    "loglevel": "1.7.1",
+    "materialize-css": "^1.0.0-rc.2",
+    "node-7z": "^2.1.2",
+    "npm": "^6.14.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "xml2js": "^0.4.23"
+  },
+  "scripts": {
+    "start": "set BROWSER=none&&react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-electron": "set ELECTRON_START_URL=http://localhost:3000&&set APP_ENV=development&&electron .",
+    "build-electron": "mkdir build/src&robocopy electron build/electron&robocopy src/shared build/src/shared /S&robocopy electron/src build/electron/src /S",
+    "package-win": "electron-builder build --win portable -c.extraMetadata.main=build/electron/main.js --publish never",
+    "package-files": "mkdir dist/settings&robocopy electron/settings dist/settings songnames.json&robocopy electron/settings dist/settings idtowaveindex.json&robocopy electron/settings dist/settings HeeHeeHo.uwus"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-react": "^7.13.13",
+    "electron": "^9.4.4",
+    "electron-builder": "^22.7.0",
+    "eslint": "7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "node-sass": "^4.14.1",
+    "prettier": "2.2.1"
+  }
+}

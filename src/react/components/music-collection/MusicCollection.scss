@@ -1,0 +1,129 @@
+@import '../../scss/ColorThemes.scss';
+
+.music-collection {
+  display: flex;
+  flex-flow: wrap;
+}
+
+// reduce padding between collections
+.row .col.s4.song-collection {
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+// loop input fields
+.input-field.inline {
+  margin: 0;
+  margin-right: 1rem;
+}
+
+.input-field.inline input,
+.input-field.inline .select-dropdown {
+  margin-bottom: 0;
+  height: 2.5rem;
+  margin-right: 1rem;
+}
+
+// set theme colors
+.collection.with-header .collection-header {
+  @include theme() {
+    background-color: theme-get('main-color');
+    color: theme-get('on-main-color');
+  }
+
+  h5 {
+    margin: 0;
+
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+// alternating bg colors for songs
+.bg-songitem-1 {
+  @include theme() {
+    background-color: lighten(theme-get('surface-color'), 10%);
+  }
+}
+
+.bg-songitem-2 {
+  @include theme() {
+    background-color: lighten(theme-get('surface-color'), 5%);
+  }
+}
+
+/* music collections */
+.id-container {
+  position: inherit;
+  margin-right: -1.2rem;
+}
+
+.anchor-container {
+  position: inherit;
+  margin-right: -1rem;
+}
+
+.file-id {
+  margin-top: -0.2rem;
+  text-align: right;
+  opacity: 0.18;
+  font-size: 25px;
+  user-select: none;
+}
+
+.file-id:hover {
+  opacity: 0.8;
+}
+
+.song-settings-icon {
+  margin-top: -0.4rem;
+  margin-right: -0.35rem;
+}
+
+.song-save-icon {
+  margin-top: -1.5rem;
+  margin-right: -0.15rem;
+}
+
+.song-item-info {
+  white-space: nowrap;
+  max-width: 95%;
+}
+
+.file-name {
+  font-size: 90%;
+  a {
+    @include theme() {
+      color: theme-get('main-color-2');
+    }
+  }
+}
+
+.song-settings-side {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.loops-form {
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.loop-input {
+  max-width: 45%;
+}
+
+.collection.with-header .collection-item.avatar {
+  padding-left: 1rem;
+}
+
+.replacement-filepath {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

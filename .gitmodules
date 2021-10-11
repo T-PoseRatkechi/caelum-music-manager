@@ -1,0 +1,3 @@
+[submodule "electron/dependencies/phos-music-converter"]
+	path = electron/dependencies/phos-music-converter
+	url = https://github.com/T-PoseRatkechi/phos-music-converter

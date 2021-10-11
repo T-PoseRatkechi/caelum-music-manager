@@ -1,0 +1,15 @@
+@import '../../scss/ColorThemes.scss';
+
+/* output box */
+#output-box {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  min-height: 150px;
+  white-space: pre;
+  resize: vertical;
+
+  @include theme() {
+    background-color: theme-get('on-main-color');
+    color: theme-get('main-color-2');
+  }
+}

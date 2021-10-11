@@ -1,0 +1,39 @@
+.enable-switch {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.awaiting-update {
+  display: inline-block;
+}
+
+.awaiting-update.preloader-wrapper.small {
+  width: 15px;
+  height: 15px;
+}
+
+/* install modules */
+.display-above {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+a#button-skip {
+  margin-left: 1rem;
+}
+
+a#button-back {
+  margin-left: 1rem;
+}
+
+#p4g-install-img {
+  max-width: 60%;
+}
+
+#install-log-textarea {
+  width: 100%;
+  height: 7rem;
+  resize: none;
+}

@@ -1,0 +1,34 @@
+.fade-out {
+  animation: fadeOut ease 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
+
+.song-item-anim {
+  animation: slideInRight ease 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}

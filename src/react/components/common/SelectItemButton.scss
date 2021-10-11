@@ -1,0 +1,26 @@
+@import '../../scss/ColorThemes.scss';
+
+.button {
+  display: inline-block;
+
+  a {
+    @include theme() {
+      background-color: theme-get('main-color');
+      color: theme-get('on-main-color');
+    }
+  }
+
+  i {
+    @include theme() {
+      color: theme-get('on-main-color');
+    }
+  }
+
+  .btn:hover,
+  .btn-large:hover,
+  .btn-small:hover {
+    @include theme() {
+      background-color: lighten(theme-get('main-color'), 10%);
+    }
+  }
+}

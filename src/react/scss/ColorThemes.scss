@@ -1,0 +1,82 @@
+// https://stackoverflow.com/a/63221870
+
+$themes: (
+  defaultDark: (
+    'bg-color': #121212,
+    'surface-color': #121212,
+    'main-color': #99e4f9,
+    'main-color-2': #77d9f4,
+    'second-color': #fcaf67,
+    'on-bg-color': #fff,
+    'on-surface-color': #fff,
+    'on-main-color': #111,
+    'on-second-color': #111
+  ),
+  defaultLight: (
+    'bg-color': rgb(255, 255, 255),
+    'surface-color': rgb(233, 233, 233),
+    'main-color': #006ed6,
+    'main-color-2': #033fa4,
+    'second-color': #202020,
+    'on-bg-color': #000,
+    'on-surface-color': #000,
+    'on-main-color': #fff,
+    'on-second-color': #fff
+  ),
+  classic: (
+    'bg-color': #ff6f00,
+    'surface-color': rgb(255, 237, 198),
+    'main-color': #d64400,
+    'main-color-2': #d45419,
+    'second-color': #202020,
+    'on-bg-color': #000,
+    'on-surface-color': #000,
+    'on-main-color': #fff,
+    'on-second-color': #fff
+  ),
+  phos: (
+    'bg-color': #198b7c,
+    'surface-color': #b9ecd9,
+    'main-color': #02856a,
+    'main-color-2': #04866c,
+    'second-color': #a6f2ff,
+    'on-bg-color': #fff,
+    'on-surface-color': #000,
+    'on-main-color': #fff,
+    'on-second-color': #0c3d5a
+  ),
+  royal: (
+    'bg-color': #121212,
+    'surface-color': #121212,
+    'main-color': #9a0000,
+    'main-color-2': #b66262,
+    'second-color': #f9ae99,
+    'on-bg-color': #fff,
+    'on-surface-color': #fff,
+    'on-main-color': #fff,
+    'on-second-color': #111
+  )
+);
+
+@mixin theme() {
+  @each $theme, $map in $themes {
+    // $theme: darkTheme, lightTheme
+    // $map: ('text-color': ..., 'bg-color': ...)
+
+    // make the $map globally accessible, so that theme-get() can access it
+    $theme-map: $map !global;
+
+    // make a class for each theme using interpolation -> #{}
+    // use & for making the theme class ancestor of the class
+    // from which you use @include theme() {...}
+    .#{$theme} & {
+      @content; // the content inside @include theme() {...}
+    }
+  }
+  // no use of the variable $theme-map now
+  $theme-map: null !global;
+}
+
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
+}
